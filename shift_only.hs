@@ -10,9 +10,9 @@ main = do
   putStrLn $ show $ solve a
 
 solve :: [Int] -> Int
-solve a =
-  let counts = map countDevide2 a
-   in head $ sort counts
+solve a = minimum counts
+  where
+    counts = map countDevide2 a
 
 countDevide2 :: Int -> Int
 countDevide2 n
